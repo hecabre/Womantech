@@ -5,11 +5,36 @@ import { RecomendationCard } from "../components/RecomendationCard";
 import { Requirements } from "../components/Requirements";
 import { UniversityCard } from "../components/UniversityCard";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { useUniversity } from "../context/UniversityContext";
+import { Spinner } from "@material-tailwind/react";
+import { Footer } from "../components/Footer";
 
 function Home() {
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState(null);
+  const { listUniversitys } = useUniversity();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const res = await listUniversitys();
+        setData(res.data.universitys);
+      } catch (e) {
+        console.error("Algo salió mal", e);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
+
   return (
-    <>
+    <div>
       <Sidebar />
       <Carousel className=" my-16">
         <div className="relative h-full w-full">
@@ -165,7 +190,7 @@ function Home() {
           }
           rating={5}
           img={
-            "https://scontent.fmex26-1.fna.fbcdn.net/v/t39.30808-6/370359130_318501830583276_20795602087210639_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGZ9J3IgVnSDjT2A0XIhGIGFwusVeLyx0oXC6xV4vLHSsV1KnouVKw5gWnJzfL-jmwOAiGonsoKdpO7TlN2GmKo&_nc_ohc=M5wpsxP-NhcQ7kNvgHeW14K&_nc_ht=scontent.fmex26-1.fna&oh=00_AfDC4h0GiD_Rr042SAAQWaUGTWAa8iofD3Pszb6H4cgnig&oe=6641FBD8"
+            "https://scontent.fmex26-1.fna.fbcdn.net/v/t39.30808-6/370359130_318501830583276_20795602087210639_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGZ9J3IgVnSDjT2A0XIhGIGFwusVeLyx0oXC6xV4vLHSsV1KnouVKw5gWnJzfL-jmwOAiGonsoKdpO7TlN2GmKo&_nc_ohc=M5wpsxP-NhcQ7kNvgHeW14K& _nc_ht=scontent.fmex26-1.fna&oh=00_AfDC4h0GiD_Rr042SAAQWaUGTWAa8iofD3Pszb6H4cgnig&oe=6641FBD8"
           }
           name={"Andrea Mendoza"}
         />
@@ -183,8 +208,34 @@ function Home() {
       </section>
       <Requirements />
       <Awards />
-      <UniversityCard />
-    </>
+      <Typography
+        variant="h2"
+        className="!text-shocking-500 text-center border border-b-shocking-500 flex justify-center items-center w-1/2 m-auto mt-10"
+      >
+        Universidades
+      </Typography>
+      <div className="flex items-center flex-wrap justify-center gap-4">
+        {data ? (
+          Array.from({ length: 3 }).map((_, index) => {
+            const randomIndex = Math.floor(Math.random() * data.length);
+            const university = data[randomIndex];
+            return (
+              <UniversityCard
+                key={university.carrera_id}
+                id={university.carrera_id}
+                nameDegre={university.carrera_nombre}
+                img={university.facultad_img}
+                name={university.facultad_nombre}
+                universityName={university.universidad_nombre}
+              />
+            );
+          })
+        ) : (
+          <Spinner />
+        )}
+      </div>
+      <Footer />
+    </div>
   );
 }
 

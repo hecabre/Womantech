@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineBars } from "react-icons/ai";
-import { Button } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 function Sidebar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -9,18 +9,33 @@ function Sidebar() {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-gradient-to-l from-shocking-300 to-shocking-500 flex justify-between lg:justify-around md:justify-around items-center z-20 text-shocking-50 py-1 px-3 font-sans font-extralight">
-      <img className="w-14 h-14" alt="logo" src="../../public/logo.png" />
+    <nav className="fixed top-0 w-full bg-gradient-to-l from-shocking-300 to-shocking-500 flex  justify-between lg:justify-around md:justify-around items-center z-20 text-shocking-50 py-1 px-3 font-sans font-extralight">
+      <Link to={"/"}>
+        <img
+          className="w-14 h-14 hover:cursor-pointer"
+          alt="logo"
+          src="../../public/logo.png"
+        />
+      </Link>
       <ul className="flex justify-around gap-0 md:gap-20">
-        <li className="hidden md:block lg:block text-lg text-shocking-50 font-semi">
-          Home
-        </li>
-        <li className="hidden md:block lg:block text-lg text-shocking-50 font-semi">
-          Movies
-        </li>
-        <li className="hidden md:block lg:block text-lg text-shocking-50 font-semi">
-          Series
-        </li>
+        <Link
+          className="hidden md:block lg:block text-lg text-shocking-50 font-semi"
+          to={"/universidades"}
+        >
+          Universidades
+        </Link>
+        <Link
+          className="hidden md:block lg:block text-lg text-shocking-50 font-semi"
+          to={"/cursos"}
+        >
+          Cursos
+        </Link>
+        <Link
+          className="hidden md:block lg:block text-lg text-shocking-50 font-semi"
+          to={"/nosotros"}
+        >
+          Nosotros
+        </Link>
       </ul>
 
       <div className="flex items-center justify-center gap-5" id="sidebar">
@@ -35,10 +50,6 @@ function Sidebar() {
             onClick={toggleSidebar}
           />
         )}
-
-        <p className="text-md bg-shocking-500 px-7 py-2 rounded-full cursor-pointer hidden md:block lg:block font-nunito">
-          Login
-        </p>
       </div>
 
       <div
@@ -57,9 +68,15 @@ function Sidebar() {
         )}
 
         <ul className="text-white">
-          <li className="py-2">Sidebar Link 1</li>
-          <li className="py-2">Sidebar Link 2</li>
-          <li className="py-2">Sidebar Link 3</li>
+          <Link to={"/universidades"} className="py-2 block">
+            Universidades
+          </Link>
+          <Link to={"/cursos"} className="py-2 block">
+            Cursos
+          </Link>
+          <Link to={"/nosotros"} className="py-2 block">
+            Nostros
+          </Link>
         </ul>
       </div>
     </nav>
