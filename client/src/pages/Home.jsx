@@ -171,7 +171,7 @@ function Home() {
           className=""
           title={"Facultad de Estudios Superiores Zaragoza"}
           description={
-            "Excelente institución, alto nivel académico para preparar futuros ingenieros de calidad."
+            "Excelente institución, alto nivel académico."
           }
           rating={5}
           img={
