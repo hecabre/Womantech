@@ -87,3 +87,23 @@ export const getCareerByid = async (id) => {
     await con.end();
   }
 };
+
+export const getFaculty = async (id) => {
+  const con = await connectDb();
+  console.log("el id" + id);
+  const query = `
+  SELECT facultades.id, facultades.nombre AS nombre_facultad, facultades.direccion, facultades.imagen, universidades.nombre AS nombre_universidad
+  FROM facultades
+  JOIN universidades ON facultades.id_universidad = universidades.id
+  WHERE universidades.id = ?
+`;
+  try {
+    const [faculty] = await con.execute(query, [id]);
+    return faculty;
+  } catch (e) {
+    console.log(e);
+    return null;
+  } finally {
+    await con.end();
+  }
+};

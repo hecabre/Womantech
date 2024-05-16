@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { useUniversity } from "../context/UniversityContext";
 import { Spinner } from "@material-tailwind/react";
 import { Footer } from "../components/Footer";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -64,9 +65,11 @@ function Home() {
                 brillante para todos!
               </Typography>
               <div className="flex gap-2">
-                <Button size="md" className="!bg-shocking-600">
-                  Ver Escuelas
-                </Button>
+                <Link to={"/universidades"}>
+                  <Button size="md" className="!bg-shocking-600">
+                    Ver Escuelas
+                  </Button>
+                </Link>
                 <a href="https://www.ipn.mx" target="_blank">
                   <Button size="md" color="white" variant="text">
                     Sitio oficial
@@ -102,9 +105,11 @@ function Home() {
                 equitativo para todas. Juntas, podemos hacer historia.
               </Typography>
               <div className="flex gap-2">
-                <Button size="md" className="!bg-shocking-600">
-                  Ver Escuelas
-                </Button>
+                <Link to={"/universidades"}>
+                  <Button size="md" className="!bg-shocking-600">
+                    Ver Escuelas
+                  </Button>
+                </Link>
                 <a href="https://www.unam.mx" target="_blank">
                   <Button size="md" color="white" variant="text">
                     Sitio oficial
@@ -140,9 +145,11 @@ function Home() {
                 nuevas alturas y dejar una huella duradera en la sociedad.
               </Typography>
               <div className="flex gap-2">
-                <Button size="md" className="!bg-shocking-600">
-                  Ver Escuelas
-                </Button>
+                <Link to={"/universidades"}>
+                  <Button size="md" className="!bg-shocking-600">
+                    Ver Escuelas
+                  </Button>
+                </Link>
                 <a href="https://www.uam.mx" target="_blank">
                   <Button size="md" color="white" variant="text">
                     Sitio oficial
@@ -190,7 +197,7 @@ function Home() {
           }
           rating={5}
           img={
-            "https://scontent.fmex26-1.fna.fbcdn.net/v/t39.30808-6/370359130_318501830583276_20795602087210639_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGZ9J3IgVnSDjT2A0XIhGIGFwusVeLyx0oXC6xV4vLHSsV1KnouVKw5gWnJzfL-jmwOAiGonsoKdpO7TlN2GmKo&_nc_ohc=M5wpsxP-NhcQ7kNvgHeW14K& _nc_ht=scontent.fmex26-1.fna&oh=00_AfDC4h0GiD_Rr042SAAQWaUGTWAa8iofD3Pszb6H4cgnig&oe=6641FBD8"
+            "https://scontent.fmex28-1.fna.fbcdn.net/v/t39.30808-6/316541474_5498308116931594_6283538092019993897_n.jpg?stp=cp6_dst-jpg&_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFD-WeaL_uXDMiYgva5lcIej92rSUlXzMiP3atJSVfMyFalCbuM8ZsBjcNuZpeaHLd_jatyqD4mN3kXPzxTm1Oj&_nc_ohc=NCab10HAQc0Q7kNvgHAWoEW&_nc_ht=scontent.fmex28-1.fna&oh=00_AYCDmx9r7LebMR0nY2PgM6denIMhrATYdhvaM5irAFoA9w&oe=664B393B"
           }
           name={"Andrea Mendoza"}
         />

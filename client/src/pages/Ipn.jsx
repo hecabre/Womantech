@@ -35,9 +35,9 @@ function Ipn() {
 
   useEffect(() => {
     const fetchFacultyData = async () => {
-      if (data && data.carrer && data.carrer.length > 0) {
+      if (data && data.university && data.university.length > 0) {
         try {
-          const facultyId = data.carrer[0].id_facultad;
+          const facultyId = data.university[0].id_facultad;
           await facultyByIdIpn(facultyId);
           console.log(allIPN);
         } catch (error) {
@@ -53,14 +53,12 @@ function Ipn() {
       <Sidebar />
       <motion.div className="relative top-32 w-full mx-auto">
         {data ? <CareerLayout data={data} /> : <Spinner />}
-
         <Typography
           variant="h2"
           className="!text-shocking-500 text-center border border-b-shocking-500 flex justify-center items-center w-1/2 m-auto mt-10 mb-5"
         >
-          {data?.carrer[0].nombre_facultad}
+          {data?.university[0].nombre_facultad}
         </Typography>
-
         <AnimatePresence exitBeforeEnter={false}>
           <motion.div
             className="flex items-center flex-wrap justify-center gap-4"
@@ -71,7 +69,7 @@ function Ipn() {
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
             {allIPN ? (
-              allIPN.map((e) => (
+              allIPN.data.faculty.map((e) => (
                 <UniversityCard
                   key={e.id}
                   id={e.id}

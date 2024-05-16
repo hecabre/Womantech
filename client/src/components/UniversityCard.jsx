@@ -9,15 +9,12 @@ import {
 import { Link } from "react-router-dom";
 import Toast from "./Toast";
 
-
 export function UniversityCard({ img, nameDegre, name, universityName, id }) {
   const [showToast, setShowToast] = useState(false);
 
-
-
   return (
     <>
-      <Link to={`/${universityName}/${id}`} >
+      <Link to={`/${universityName}/${id}`}>
         <Card className="mt-6 w-96 transition-transform hover:-translate-y-5 cursor-pointer">
           <img
             src={img}

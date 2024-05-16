@@ -24,12 +24,7 @@ function Sidebar() {
         >
           Universidades
         </Link>
-        <Link
-          className="hidden md:block lg:block text-lg text-shocking-50 font-semi"
-          to={"/cursos"}
-        >
-          Cursos
-        </Link>
+
         <Link
           className="hidden md:block lg:block text-lg text-shocking-50 font-semi"
           to={"/nosotros"}
@@ -71,9 +66,7 @@ function Sidebar() {
           <Link to={"/universidades"} className="py-2 block">
             Universidades
           </Link>
-          <Link to={"/cursos"} className="py-2 block">
-            Cursos
-          </Link>
+
           <Link to={"/nosotros"} className="py-2 block">
             Nostros
           </Link>

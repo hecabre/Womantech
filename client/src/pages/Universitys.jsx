@@ -10,18 +10,19 @@ import { Typography } from "@material-tailwind/react";
 function Universitys() {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
-  const [activeTab, setActiveTab] = useState("all"); // Estado para controlar la pestaña activa
-  const [searchValue, setSearchValue] = useState(""); // Estado para el valor de búsqueda
+  const [activeTab, setActiveTab] = useState("all"); 
+  const [searchValue, setSearchValue] = useState("");
   const { listUniversitys } = useUniversity();
-  const [originalData, setOriginalData] = useState(null); // Estado para almacenar los datos originales
+  const [originalData, setOriginalData] = useState(null); 
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
         const res = await listUniversitys();
+        console.log(res.data.universitys);
         setData(res.data.universitys);
-        setOriginalData(res.data.universitys); // Almacenar los datos originales
+        setOriginalData(res.data.universitys); 
       } catch (e) {
         console.error("Algo salió mal", e);
       } finally {
