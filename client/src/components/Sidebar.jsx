@@ -22,7 +22,7 @@ function Sidebar() {
           className="hidden md:block lg:block text-lg text-shocking-50 font-semi"
           to={"/universidades"}
         >
-          Universidades
+          Universidades{import.meta.env.VITE_BACKEND}
         </Link>
 
         <Link
