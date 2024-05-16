@@ -10,10 +10,10 @@ import { Typography } from "@material-tailwind/react";
 function Universitys() {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
-  const [activeTab, setActiveTab] = useState("all"); 
+  const [activeTab, setActiveTab] = useState("all");
   const [searchValue, setSearchValue] = useState("");
   const { listUniversitys } = useUniversity();
-  const [originalData, setOriginalData] = useState(null); 
+  const [originalData, setOriginalData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,7 +22,7 @@ function Universitys() {
         const res = await listUniversitys();
         console.log(res.data.universitys);
         setData(res.data.universitys);
-        setOriginalData(res.data.universitys); 
+        setOriginalData(res.data.universitys);
       } catch (e) {
         console.error("Algo salió mal", e);
       } finally {
@@ -87,12 +87,16 @@ function Universitys() {
         >
           Universidades
         </Typography>
-        <div className="flex gap-2  items-center  justify-center mt-5">
-          <ButtonGroup variant="outlined" className="">
+        <div className="flex gap-2  items-center  justify-center mt-5 flex-wrap">
+          <ButtonGroup
+            
+            className="!flex !flex-wrap !bg-shocking-500 rounded-xl"
+          >
             <Button
               color="lightBlue"
               onClick={() => setActiveTab("unam")}
               ripple="light"
+              className="!text-shocking-50 !bg-transparent border-none rounded-2xl"
             >
               UNAM
             </Button>
@@ -100,6 +104,7 @@ function Universitys() {
               color="lightBlue"
               onClick={() => setActiveTab("uam")}
               ripple="light"
+              className="!text-shocking-50 !bg-transparent border-none rounded-2xl"
             >
               UAM
             </Button>
@@ -107,6 +112,7 @@ function Universitys() {
               color="lightBlue"
               onClick={() => setActiveTab("ipn")}
               ripple="light"
+              className="!text-shocking-50 !bg-transparent border-none rounded-2xl"
             >
               IPN
             </Button>
@@ -114,10 +120,16 @@ function Universitys() {
               color="lightBlue"
               onClick={() => setActiveTab("aciertos")}
               ripple="light"
+              className="!text-shocking-50 !bg-transparent border-none rounded-2xl"
             >
               Aciertos
             </Button>
-            <Button color="lightBlue" onClick={clearFilters} ripple="light">
+            <Button
+              color="lightBlue"
+              onClick={clearFilters}
+              ripple="light"
+              className="!text-shocking-50 !bg-transparent border-none rounded-2xl"
+            >
               Limpiar
             </Button>
           </ButtonGroup>
