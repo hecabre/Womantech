@@ -90,7 +90,7 @@ function Universitys() {
         <div className="flex gap-2  items-center  justify-center mt-5 flex-wrap">
           <ButtonGroup
             
-            className="!flex !flex-wrap !bg-shocking-500 rounded-xl"
+            className="!flex !flex-wrap !bg-shocking-500 rounded-xl !items-center !justify-center"
           >
             <Button
               color="lightBlue"
