@@ -14,7 +14,7 @@ function Sidebar() {
         <img
           className="w-14 h-14 hover:cursor-pointer"
           alt="logo"
-          src="../../public/logo.png"
+          src="../logo.png"
         />
       </Link>
       <ul className="flex justify-around gap-0 md:gap-20">
@@ -63,11 +63,16 @@ function Sidebar() {
         )}
 
         <ul className="text-white">
-          <Link to={"/universidades"} className="py-2 block">
+          <img
+            className="w-14 h-14 hover:cursor-pointer"
+            alt="logo"
+            src="../logo.png"
+          />
+          <Link to={"/universidades"} className="py-2 block text-center hover:bg-shocking-200 transition-all hover:text-shocking-500 hover:font-semibold rounded-lg">
             Universidades
           </Link>
 
-          <Link to={"/nosotros"} className="py-2 block">
+          <Link to={"/nosotros"} className="py-2 block text-center hover:bg-shocking-200 transition-all hover:text-shocking-500 hover:font-semibold rounded-lg">
             Nostros
           </Link>
         </ul>

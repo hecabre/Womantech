@@ -8,7 +8,7 @@ export function Footer() {
         color="blue-gray"
         className="font-normal text-shocking-50 flex items-center justify-center"
       >
-        <img src="../../public/logo.png" className="w-14 h-14 flex" />
+        <img src="../logo.png" className="w-14 h-14 flex" />
         2023 FemTech
       </Typography>
       <ul className="flex flex-wrap items-center gap-y-2 gap-x-8 text-shocking-50">
