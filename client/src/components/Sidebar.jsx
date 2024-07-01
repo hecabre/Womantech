@@ -1,10 +1,16 @@
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineBars } from "react-icons/ai";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import { useAuth } from "../context/AuthContext";
 function Sidebar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { isAuthenticated, logout } = useAuth();
+=======
+function Sidebar() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+>>>>>>> 554a9d862430e50c897d93df8ada1ed63b446b2f
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
@@ -32,6 +38,7 @@ function Sidebar() {
         >
           Nosotros
         </Link>
+<<<<<<< HEAD
         {isAuthenticated ? (
           <>
             <Link
@@ -56,6 +63,8 @@ function Sidebar() {
             Iniciar sesión
           </Link>
         )}
+=======
+>>>>>>> 554a9d862430e50c897d93df8ada1ed63b446b2f
       </ul>
 
       <div className="flex items-center justify-center gap-5" id="sidebar">
@@ -93,6 +102,7 @@ function Sidebar() {
             alt="logo"
             src="../logo.png"
           />
+<<<<<<< HEAD
           <Link
             to={"/universidades"}
             className="py-2 block text-center hover:bg-shocking-200 transition-all hover:text-shocking-500 hover:font-semibold rounded-lg"
@@ -130,6 +140,15 @@ function Sidebar() {
               Iniciar Sesion
             </Link>
           )}
+=======
+          <Link to={"/universidades"} className="py-2 block text-center hover:bg-shocking-200 transition-all hover:text-shocking-500 hover:font-semibold rounded-lg">
+            Universidades
+          </Link>
+
+          <Link to={"/nosotros"} className="py-2 block text-center hover:bg-shocking-200 transition-all hover:text-shocking-500 hover:font-semibold rounded-lg">
+            Nostros
+          </Link>
+>>>>>>> 554a9d862430e50c897d93df8ada1ed63b446b2f
         </ul>
       </div>
     </nav>

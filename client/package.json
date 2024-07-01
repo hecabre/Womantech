@@ -13,10 +13,15 @@
     "@material-tailwind/react": "^2.1.9",
     "axios": "^1.6.8",
     "framer-motion": "^11.2.0",
+<<<<<<< HEAD
     "js-cookie": "^3.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.52.0",
+=======
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+>>>>>>> 554a9d862430e50c897d93df8ada1ed63b446b2f
     "react-icons": "^5.2.1",
     "react-router-dom": "^6.23.0",
     "react-transition-group": "^4.4.5"

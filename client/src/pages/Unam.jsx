@@ -33,6 +33,7 @@ function Unam() {
   }, [id]);
 
   useEffect(() => {
+<<<<<<< HEAD
     // Scroll hacia arriba al cargar la página
     window.scrollTo({
       top: 0,
@@ -40,6 +41,8 @@ function Unam() {
     });
   }, [id]);
   useEffect(() => {
+=======
+>>>>>>> 554a9d862430e50c897d93df8ada1ed63b446b2f
     const fetchFacultyData = async () => {
       if (data && data.university && data.university.length > 0) {
         try {

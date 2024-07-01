@@ -12,18 +12,28 @@ function Universitys() {
   const [data, setData] = useState(null);
   const [activeTab, setActiveTab] = useState("all");
   const [searchValue, setSearchValue] = useState("");
+<<<<<<< HEAD
   const { listUniversitys, listUniversitysUAM } = useUniversity();
+=======
+  const { listUniversitys } = useUniversity();
+>>>>>>> 554a9d862430e50c897d93df8ada1ed63b446b2f
   const [originalData, setOriginalData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
+<<<<<<< HEAD
         let res = await listUniversitys();
         const res2 = await listUniversitysUAM();
 
         setData(res.data.universitys.concat(res2.data.faculty));
         console.log(data);
+=======
+        const res = await listUniversitys();
+        console.log(res.data.universitys);
+        setData(res.data.universitys);
+>>>>>>> 554a9d862430e50c897d93df8ada1ed63b446b2f
         setOriginalData(res.data.universitys);
       } catch (e) {
         console.error("Algo salió mal", e);
@@ -34,6 +44,10 @@ function Universitys() {
     fetchData();
   }, []);
 
+<<<<<<< HEAD
+=======
+  // Función para filtrar los datos según la pestaña activa y el valor de búsqueda
+>>>>>>> 554a9d862430e50c897d93df8ada1ed63b446b2f
   const filterDataByTabAndSearch = () => {
     let filteredData = data;
 
@@ -89,7 +103,14 @@ function Universitys() {
           Universidades
         </Typography>
         <div className="flex gap-2  items-center  justify-center mt-5 flex-wrap">
+<<<<<<< HEAD
           <ButtonGroup className="!flex !flex-wrap !bg-shocking-500 rounded-xl !items-center !justify-center">
+=======
+          <ButtonGroup
+            
+            className="!flex !flex-wrap !bg-shocking-500 rounded-xl !items-center !justify-center"
+          >
+>>>>>>> 554a9d862430e50c897d93df8ada1ed63b446b2f
             <Button
               color="lightBlue"
               onClick={() => setActiveTab("unam")}

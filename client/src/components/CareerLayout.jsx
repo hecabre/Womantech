@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 import { Button, Spinner, Typography } from "@material-tailwind/react";
 import { Dificult } from "./Dificulty";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 function CareerLayout({ data }) {
   const { isAuthenticated } = useAuth();
+=======
+import { Spinner, Typography } from "@material-tailwind/react";
+import { Dificult } from "./Dificulty";
+import { Link } from "react-router-dom";
+
+function CareerLayout({ data }) {
+>>>>>>> 554a9d862430e50c897d93df8ada1ed63b446b2f
   return (
     <>
       {data ? (
@@ -64,7 +72,10 @@ function CareerLayout({ data }) {
             <Typography className="text-center">
               Direccion: {data?.university[0].direccion}
             </Typography>
+<<<<<<< HEAD
             {isAuthenticated && <Button className="bg-shocking-500">Suscribirse</Button>}
+=======
+>>>>>>> 554a9d862430e50c897d93df8ada1ed63b446b2f
           </div>
         </div>
       ) : (
