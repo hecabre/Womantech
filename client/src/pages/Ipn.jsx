@@ -48,7 +48,6 @@ function Ipn() {
 
     fetchFacultyData();
   }, [data]);
-<<<<<<< HEAD
 
   useEffect(() => {
     // Scroll hacia arriba al cargar la página
@@ -58,8 +57,6 @@ function Ipn() {
     });
   }, [data]);
 
-=======
->>>>>>> 554a9d862430e50c897d93df8ada1ed63b446b2f
   return (
     <div>
       <Sidebar />
@@ -101,8 +98,4 @@ function Ipn() {
     </div>
   );
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 554a9d862430e50c897d93df8ada1ed63b446b2f
 export default Ipn;

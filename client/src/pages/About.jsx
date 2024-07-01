@@ -22,7 +22,6 @@ function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-<<<<<<< HEAD
               Soy un estudiante de la carrera de Ingenería Informática del
               Insituto Politecnico nacional, actualmente curso el 4 semestre de
               la carrera. Me he puesto como proposito en este proyecto el
@@ -36,22 +35,6 @@ function About() {
               informadas sobre tu futuro académico y profeisonal.Creo firmemente
               que cada individuo tiene un potencial único y quiero ayudarte a
               descubrir y aprovechar el tuyo.
-=======
-              Somos un equipo de estudiantes apasionados de la Licenciatura en
-              Ciencias de la Informática del Instituto Politécnico Nacional,
-              actualmente cursando nuestro tercer semestre de carrera. Nos hemos
-              unido con un propósito en común: ayudarte a descubrir y explorar
-              tu camino profesional en el vasto mundo de las carreras STEM. Con
-              nuestra profunda pasión por la tecnología y el aprendizaje, hemos
-              desarrollado una aplicación de orientación vocacional diseñada
-              específicamente para brindarte la orientación y la información
-              necesarias para tomar decisiones informadas sobre tu futuro
-              académico y profesional. Estamos comprometidos no solo con tu
-              éxito académico, sino también con tu satisfacción personal y
-              profesional. Creemos firmemente que cada individuo tiene un
-              potencial único y queremos ayudarte a descubrir y aprovechar el
-              tuyo.
->>>>>>> 554a9d862430e50c897d93df8ada1ed63b446b2f
             </motion.p>
             <motion.div
               className="mt-8 overflow-hidden rounded-lg shadow-lg"

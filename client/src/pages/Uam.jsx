@@ -32,6 +32,13 @@ function Uam() {
       fetchData();
     }
   }, [id]);
+  useEffect(() => {
+    // Scroll hacia arriba al cargar la página
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [id]);
 
   useEffect(() => {
     const fetchFacultyData = async () => {
@@ -48,7 +55,6 @@ function Uam() {
 
     fetchFacultyData();
   }, [data]);
-<<<<<<< HEAD
   useEffect(() => {
     // Scroll hacia arriba al cargar la página
     window.scrollTo({
@@ -56,8 +62,6 @@ function Uam() {
       behavior: "smooth",
     });
   }, [data]);
-=======
->>>>>>> 554a9d862430e50c897d93df8ada1ed63b446b2f
   return (
     <div>
       <Sidebar />
@@ -93,11 +97,7 @@ function Uam() {
               ))
             ) : (
               <Spinner />
-<<<<<<< HEAD
             )}
-=======
-            )}{" "}
->>>>>>> 554a9d862430e50c897d93df8ada1ed63b446b2f
             <Footer />
           </motion.div>
         </AnimatePresence>
