@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 *.env
 .env
+
+# Ignorar la carpeta 'server' en el nivel superior
+../server
